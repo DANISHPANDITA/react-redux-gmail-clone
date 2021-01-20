@@ -1,0 +1,70 @@
+.Mail {
+  margin-left: 2.3vw;
+  margin-top: 0px;
+}
+.mailRow {
+  height: 2.8vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid rgb(202, 198, 198);
+}
+.mailRow:hover {
+  cursor: pointer;
+  border-bottom: 2px solid rgb(202, 198, 198);
+}
+
+.mailSender {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #202124;
+}
+.mailTopic {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #202124;
+}
+.mailMessage {
+  font-family: "Roboto";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: #202124;
+  text-overflow: ellipsis;
+}
+.mailTimestamp {
+  font-family: "Roboto";
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 20px;
+  color: #202124;
+}
+.mailRowcheckbox {
+  height: 9px !important;
+  width: 9px !important;
+}
+.mailRowstar {
+  margin-left: 0.5vw;
+  margin-right: 1vw;
+  color: rgb(240, 240, 240);
+}
+.mailRowstar:hover {
+  cursor: pointer;
+  color: orange;
+}
+.mailSender {
+  width: 10.5vw;
+}
+.mailmsg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 76%;
+}
+.mailTopic {
+  margin-right: 0.4vw;
+}

@@ -1,0 +1,68 @@
+.navbar {
+  flex: 0.1;
+  top: 0;
+  position: sticky;
+  z-index: 100;
+  background-color: white;
+}
+.Nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(226, 226, 226);
+}
+.navLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.GmailLogo {
+  height: 40px;
+  width: 109px;
+  object-fit: contain;
+  margin-left: 5px;
+}
+.NavEnd {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.navIcon {
+  margin-left: 15px;
+  margin-right: 15px;
+  height: 28px !important;
+  width: 28px !important;
+}
+.navicon {
+  height: 20px !important;
+  width: 20px !important;
+}
+.midNav {
+  flex: 0.9;
+}
+.inputBar {
+  margin-left: 1vw;
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: #f1f3f4;
+  border-radius: 5px;
+}
+.input {
+  font-family: "Fira Code";
+  font-size: 16px;
+  font-weight: 400;
+  background-color: #f1f3f4;
+  color: black;
+  outline: none;
+  border: none;
+  height: 4.2vh;
+  width: 100%;
+}
+.inputIcon {
+  margin: 0px 5px 0px 5px !important;
+  align-items: flex-end;
+}

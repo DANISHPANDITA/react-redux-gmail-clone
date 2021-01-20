@@ -1,0 +1,139 @@
+.SendMailComponent {
+  position: absolute;
+  top: 40vh;
+  display: flex;
+  flex-direction: column;
+  width: 30vw;
+  margin-left: 65vw;
+  margin-right: 0;
+}
+.SendMailComponentHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: rgb(63, 63, 63);
+  color: white;
+  justify-content: space-between;
+  border-radius: 10px 10px 0px 0px;
+}
+.NewMessageTitle {
+  margin: 8px 0px 8px 15px;
+  font-family: "Open Sans";
+  font-size: 14px;
+  font-weight: 700;
+}
+.NewMessageRightHeader {
+  margin-right: 15px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.sendmailHeaderIcon {
+  height: 22px !important;
+  width: 22px !important;
+}
+.sendmailHeadericon {
+  height: 16px !important;
+  width: 16px !important;
+  color: rgb(219, 219, 219);
+}
+.RegionMailTo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #aaa7a7;
+}
+.RegionSubject {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  border-bottom: 1px solid #aaa7a7;
+}
+.RegionMailTo p {
+  margin: 3px 0px 3px 15px;
+  font-weight: 400;
+  font-family: "Roboto";
+  color: #777777;
+  font-size: 14px;
+}
+.RegionMailTo input {
+  margin: 3px 0px 3px 3px;
+  flex: 1;
+  outline: none;
+  border: none;
+}
+.RegionSubject p {
+  margin: 3px 0px 3px 15px;
+  font-weight: 400;
+  font-family: "Roboto";
+  color: #777777;
+  font-size: 14px;
+}
+.RegionSubject input {
+  margin: 3px 0px 3px 3px;
+  flex: 1;
+  outline: none;
+  border: none;
+}
+.SendMailComponentText {
+  width: 29.5vw;
+  height: 40.5vh;
+  outline: none;
+  border: none;
+}
+.mailComponentFooter {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 5px;
+}
+.mailFooterLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.mailFooterLeft button {
+  background-color: #3079ed;
+  outline: none;
+  border: none;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: white;
+  padding: 7px 25px 7px 25px;
+  border-radius: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.mailFooterLeft button:hover {
+  cursor: pointer;
+  border: 0.5px solid blue;
+}
+.footerIcon {
+  height: 18px !important;
+  width: 18px !important;
+  color: rgb(110, 108, 108);
+  margin: 0px 5px 0px 5px;
+}
+.footerIcon:hover {
+  cursor: pointer;
+  color: black;
+}
+.SendMailWarning {
+  font-size: 11px;
+  margin-right: 2vw;
+  color: rgb(224, 83, 83);
+}
+.SendMailFile {
+  font-size: 11px;
+  margin: 0px 0px 4px 7px;
+  font-weight: bolder;
+  color: #6c95c2;
+  width: fit-content;
+  padding: 2px 10px 2px 10px;
+}
+.SendMailFile :hover {
+  cursor: pointer;
+}

@@ -1,0 +1,109 @@
+.MailBody {
+  margin-left: 1vw;
+  flex: 0.86;
+}
+.mailbodyTop {
+  margin-left: 1vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #e6e1e1;
+  justify-content: space-between;
+}
+.topLeft {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.topRight {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-right: 2vw;
+}
+.totalmsg {
+  font-size: 12px;
+  font-family: "Roboto";
+  font-weight: 400;
+  color: #6b6b6b;
+}
+.checkbox {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.MuiSvgIcon-root {
+  height: 18px !important;
+  width: 18px !important;
+}
+.mailsHeaders {
+  margin-left: 1vw;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-bottom: 1px solid #e6e1e1;
+}
+.mailHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 140px 0px 10px;
+}
+.mailHeader:hover {
+  cursor: pointer;
+  background-color: #f2f2f2;
+}
+.mailHeaderPrimaryText {
+  font-family: "Google Sans";
+  font-size: 12px;
+  font-weight: 700;
+  color: #d93025;
+  margin-left: 10px;
+}
+.mailHeaderPrimary {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 0px 140px 0px 10px;
+  border-bottom: 2px solid #d93025;
+}
+.mailHeaderPrimary:hover {
+  cursor: pointer;
+  background-color: #f2f2f2;
+}
+.mailHeaderSocialText {
+  font-family: "Google Sans";
+  font-size: 12px;
+  font-weight: 700;
+  color: #747474;
+  margin-left: 10px;
+}
+.mailHeaderPromotionsText {
+  font-family: "Google Sans";
+  font-size: 12px;
+  font-weight: 700;
+  color: #6b6b6b;
+  margin-left: 10px;
+}
+.HeaderIconPrimary {
+  color: #d93025;
+}
+.HeaderIconSocial {
+  color: #767676;
+}
+.HeaderIconPromotions {
+  color: #767676;
+}
+.HeaderIcon {
+  margin-left: 5px !important;
+  height: 24px !important;
+  width: 24px !important;
+}
+.headericon {
+  height: 18px !important;
+  width: 18px !important;
+}
+.headericon:hover {
+  color: #000000;
+}

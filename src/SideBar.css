@@ -1,0 +1,65 @@
+.sidebar {
+  flex: 0.14;
+  margin-top: 3vh;
+}
+.composeMsg {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.composeMsg Button {
+  font-family: "Google sans-serif";
+  text-transform: capitalize;
+  border-radius: 25px !important;
+  box-shadow: 0px 2px 5px -2px #3c4043;
+  font-size: 14px;
+  color: #3c4043;
+  font-weight: 500;
+  margin-left: 5px;
+}
+.composeMsg Button:hover {
+  box-shadow: 0px 5px 10px -5px #3c4043;
+}
+.addCompose {
+  height: 32px !important;
+  width: 32px !important;
+  color: rgb(182, 63, 34) !important;
+}
+.MuiButton-label {
+  padding: 0px 10px 0px 10px;
+}
+.sidebarOptions {
+  margin-top: 15px;
+  border-bottom: 1px solid #d3d3d3;
+}
+.meet {
+  border-bottom: 1px solid #d3d3d3;
+}
+.SidebarHeader {
+  font-family: "Raleway";
+  font-weight: 500;
+  font-size: 14px;
+  color: #202124;
+  margin-left: 25px;
+  margin-bottom: 0;
+}
+.HangoutsDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.HangoutsName {
+  font-family: "Google sans";
+  font-size: 12px;
+}
+.leftHangoutside {
+  margin-left: 25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.HangoutsAvatar {
+  height: 28px !important;
+  width: 28px !important;
+}

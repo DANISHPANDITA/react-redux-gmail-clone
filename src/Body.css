@@ -1,0 +1,10 @@
+.body {
+  flex: 0.9;
+}
+.BodyItems {
+  display: flex;
+  flex-direction: row;
+}
+.rightSidebar {
+  flex: 0.86;
+}

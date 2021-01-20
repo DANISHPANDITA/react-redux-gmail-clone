@@ -1,0 +1,47 @@
+.sidebaroption {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  height: 24px;
+  width: 90%;
+  border-radius: 15px;
+  padding: 0px 10px 0px 25px;
+}
+.sidebaroptionIcon {
+  height: 18px !important;
+  color: #696969;
+}
+.sidebaroptionIcon--active {
+  color: #d93025 !important;
+}
+.sidebaroption--active {
+  background-color: #fce8e6;
+}
+.sideOptDetails {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.optionName {
+  font-family: "Roboto";
+  font-size: 14px;
+  color: #4e5050;
+  text-decoration: none;
+}
+.optionName--active {
+  color: #d93025;
+  font-weight: 800;
+}
+.optionnumber {
+  font-family: "Roboto";
+  font-size: 12px;
+  font-weight: 700;
+}
+.sidebaroption:hover {
+  cursor: pointer;
+  background-color: #e0e0e0;
+}
+.optionnumber--active {
+  color: #d93025;
+}
