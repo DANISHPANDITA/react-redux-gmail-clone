@@ -9,10 +9,26 @@ import {
   RefreshRounded,
   ArrowRightRounded,
 } from "@material-ui/icons";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Mail from "./Mail";
 import "./MailsBody.css";
+import db from "./firebase";
 function MailsBody() {
+  const [rowMessages, setrowMessages] = useState([]);
+  useEffect(() => {
+    db.collection("gmail")
+      .doc("P4c4dxEtAc5DbVEBptd2")
+      .collection("messages")
+      .orderBy("timestamp", "desc")
+      .onSnapshot((snapshot) =>
+        setrowMessages(
+          snapshot.docs.map((doc) => ({
+            id: doc.id,
+            rowMessage: doc.data(),
+          }))
+        )
+      );
+  }, []);
   return (
     <div className="MailBody">
       <div className="mailbodyTop">
@@ -55,18 +71,16 @@ function MailsBody() {
           <p className="mailHeaderPromotionsText">Promotions</p>
         </div>
       </div>
-      <Mail
-        name="Danish Pandita"
-        mailmessage="The message is as good as it should be"
-        timestamp="7:15 A.M"
-        topic="New message topic here"
-      />
-      <Mail
-        name="Danish Pandita"
-        mailmessage="The message is as good as it should be"
-        timestamp="7:15 A.M"
-        topic="New message topic here"
-      />
+      {rowMessages.map(({ id, rowMessage }) => (
+        <Mail
+          key={id}
+          name={rowMessage.Name}
+          mailmessage={rowMessage.message}
+          timestamp={rowMessage.timestamp}
+          topic={rowMessage.Topic}
+          media={rowMessage?.media}
+        />
+      ))}
     </div>
   );
 }

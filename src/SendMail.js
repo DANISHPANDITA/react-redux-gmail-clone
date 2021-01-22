@@ -19,6 +19,8 @@ import "./SendMAil.css";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { closeSendMsg } from "./features/mailSlice";
+import db, { storage } from "./firebase";
+import firebase from "firebase";
 function SendMail() {
   const dispatch = useDispatch();
   const { register, handleSubmit, errors } = useForm();
@@ -26,7 +28,7 @@ function SendMail() {
   const [inputMailSubject, setinputMailSubject] = useState("");
   const [inputMailText, setinputMailText] = useState("");
   const [photo, setphoto] = useState("");
-
+  const [progress, setprogress] = useState("");
   function buildPhotoSelector() {
     const fileSelector = document.createElement("input");
     fileSelector.setAttribute("type", "file");
@@ -47,7 +49,59 @@ function SendMail() {
     });
   };
 
-  const onSubmit = (e) => {};
+  const onSubmit = (e) => {
+    if (photo) {
+      const uploadTask = storage.ref(`media/${photo}.name}`).put(photo);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          var progress = Math.floor(
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          );
+          console.log("Upload is " + progress + "% done");
+          setprogress(progress);
+          switch (snapshot.state) {
+            case firebase.storage.TaskState.PAUSED:
+              console.log("Upload is paused");
+              break;
+            case firebase.storage.TaskState.RUNNING:
+              console.log("Upload is running");
+              break;
+            default:
+              console.log("..");
+          }
+        },
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+            db.collection("gmail")
+              .doc("P4c4dxEtAc5DbVEBptd2")
+              .collection("messages")
+              .add({
+                Name: e.Name,
+                Topic: e.Topic,
+                message: e.message,
+                timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+                media: downloadURL,
+              });
+          });
+        }
+      );
+    } else {
+      db.collection("gmail")
+        .doc("P4c4dxEtAc5DbVEBptd2")
+        .collection("messages")
+        .add({
+          Name: e.Name,
+          Topic: e.Topic,
+          message: e.message,
+          timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        });
+    }
+  };
+
   const clearphoto = () => {
     setphoto("");
   };
@@ -75,7 +129,7 @@ function SendMail() {
         <div className="RegionMailTo">
           <p>To</p>
           <input
-            name="To"
+            name="Name"
             value={inputRecieverAddress}
             onChange={(e) => setinputRecieverAddress(e.target.value)}
             ref={register({ required: true })}
@@ -89,7 +143,7 @@ function SendMail() {
         <div className="RegionSubject">
           <p>Subject</p>
           <input
-            name="Subject"
+            name="Topic"
             value={inputMailSubject}
             onChange={(e) => setinputMailSubject(e.target.value)}
             ref={register({ required: true })}
@@ -99,7 +153,7 @@ function SendMail() {
           )}
         </div>
         <textarea
-          name="mailText"
+          name="message"
           className="SendMailComponentText"
           value={inputMailText}
           onChange={(e) => setinputMailText(e.target.value)}
@@ -107,7 +161,10 @@ function SendMail() {
         />
         {photo && (
           <p onClick={clearphoto} className="SendMailFile">
-            {photo.name} <small>{photo.size / (1024 * 1024)}</small>
+            {photo.name}{" "}
+            <small className="fileSize">
+              {(photo.size / 1024).toFixed(2)} KB
+            </small>
           </p>
         )}
         <div className="mailComponentFooter">

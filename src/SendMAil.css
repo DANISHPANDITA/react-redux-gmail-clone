@@ -47,7 +47,6 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-
   border-bottom: 1px solid #aaa7a7;
 }
 .RegionMailTo p {
@@ -109,7 +108,7 @@
 }
 .mailFooterLeft button:hover {
   cursor: pointer;
-  border: 0.5px solid blue;
+  border: 0.2px solid blue;
 }
 .footerIcon {
   height: 18px !important;
@@ -136,4 +135,7 @@
 }
 .SendMailFile :hover {
   cursor: pointer;
+}
+.fileSize {
+  margin-left: 1vw;
 }

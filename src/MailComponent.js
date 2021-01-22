@@ -12,10 +12,14 @@ import {
   WatchLaterRounded,
 } from "@material-ui/icons";
 import React from "react";
+import { useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
+import { selectOpenMail } from "./features/mailSlice";
 import "./MailComponent.css";
 function MailComponent() {
   const history = useHistory();
+  const openSelectedMail = useSelector(selectOpenMail);
+
   return (
     <div className="mailComponent">
       <div className="mailCompTop">
@@ -60,12 +64,23 @@ function MailComponent() {
         </div>
       </div>
       <div className="mailCompDetails">
-        <p>New message topic here</p>
-        <Avatar src="" alt="" />
-        <p>
-          Danish Pandita
-          <span>to me</span>
-        </p>
+        <p className="mailCompTitle">{openSelectedMail?.topic}</p>
+        <div className="mailCompSenderDetails">
+          <Avatar className="mailCompAvatar" src="" alt="" />
+          <p className="mailCompSenderName">
+            {openSelectedMail?.name}
+            <small className="mailCompSenderTo">to me</small>
+          </p>
+        </div>
+        <h3 className="mailCompMessage">{openSelectedMail?.mailmessage}</h3>
+        <object
+          className="mailMediaFile"
+          data={openSelectedMail?.media}
+          width="500"
+          height="450"
+        >
+          No media file is provided
+        </object>
       </div>
     </div>
   );

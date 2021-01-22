@@ -1,0 +1,33 @@
+.LoginPage {
+  height: 100vh;
+  background-color: rgb(249, 249, 249);
+}
+.LoginImage {
+  border-radius: 44px;
+  opacity: 0.8;
+  height: 30vh;
+  width: 27vw;
+  object-fit: contain;
+  margin: 5% 34% 0% 37%;
+}
+.LoginPage h2 {
+  text-align: center;
+  color: rgb(209, 121, 121);
+}
+.LoginButton {
+  margin-left: 48%;
+  padding: 5px 20px 5px 20px;
+  background-color: rgb(187, 187, 187);
+  color: rgb(73, 73, 73);
+  box-shadow: 5px 10px rgb(82, 87, 82);
+  font-size: 22px;
+  font-weight: 700;
+  border: none;
+  outline: none;
+  border-radius: 15px;
+}
+.LoginButton:hover {
+  cursor: pointer;
+  transition: 200ms ease-in-out;
+  background-color: rgb(233, 128, 128);
+}

@@ -8,8 +8,13 @@ import {
   SettingsRounded,
 } from "@material-ui/icons";
 import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "./features/userSlice";
+import { auth } from "./firebase";
 import "./Navbar.css";
 function Navbar() {
+  const user = useSelector(selectUser);
+  const dispatch = useDispatch();
   return (
     <div className="navbar">
       <div className="Nav">
@@ -46,8 +51,11 @@ function Navbar() {
             <AppsRounded className="navicon" />
           </IconButton>
           <Avatar
+            onClick={() => {
+              auth.signOut().then(dispatch(logout()));
+            }}
             className="navIcon"
-            src="https://lh3.googleusercontent.com/ogw/ADGmqu-lOEQqtZzqvcw_1RkjqPW-2oQmxEsLh8aDRXhn9w=s83-c-mo"
+            src={user?.photo}
             alt=""
           />
         </div>

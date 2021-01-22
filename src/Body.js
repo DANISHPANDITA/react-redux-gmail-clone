@@ -7,12 +7,13 @@ import MailComponent from "./MailComponent";
 import SendMail from "./SendMail";
 import { useSelector } from "react-redux";
 import { selectsendmsgisopen } from "./features/mailSlice";
+
 function Body() {
   const sendMsgIsOpen = useSelector(selectsendmsgisopen);
   return (
     <div className="body">
-      <div className="BodyItems">
-        <Router>
+      <Router>
+        <div className="BodyItems">
           <SideBar />
           <Switch>
             <Route path="/mails">
@@ -28,8 +29,9 @@ function Body() {
               <MailsBody />
             </Route>
           </Switch>
-        </Router>
-      </div>
+        </div>
+      </Router>
+
       {sendMsgIsOpen && <SendMail />}
     </div>
   );
